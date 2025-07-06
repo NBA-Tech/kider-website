@@ -1,7 +1,12 @@
-/********** Template CSS **********/
+
+
+/********** Original Happy Feet Theme CSS **********/
 :root {
-    --primary: #FE5D37;
-    --light: #FFF5F3;
+    --primary: #4E71FF;
+    --light: #F0F8FF;
+    --secondary: #C4E1E6;
+    --accent: #FFD66B;
+    --accent-light: #FFE99A;
     --dark: #103741;
 }
 
@@ -13,6 +18,11 @@
     z-index: 99;
 }
 
+body {
+    font-family: 'Heebo', sans-serif;
+    color: var(--dark);
+    background-color: var(--light);
+}
 
 /*** Spinner ***/
 #spinner {
@@ -28,14 +38,26 @@
     opacity: 1;
 }
 
-
 /*** Button ***/
+
+.btn:hover {
+    color: #000000 !important;
+}
+
 .btn {
     font-weight: 500;
     transition: .5s;
 }
 
 .btn.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #FFFFFF;
+}
+
+.btn.btn-primary:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
     color: #FFFFFF;
 }
 
@@ -64,7 +86,6 @@
     font-weight: normal;
     border-radius: 50px;
 }
-
 
 /*** Heading ***/
 h1,
@@ -96,8 +117,11 @@ h6,
     font-family: 'Lobster Two', cursive;
 }
 
-
 /*** Navbar ***/
+.navbar {
+    background-color: var(--light);
+}
+
 .navbar .navbar-nav .nav-link {
     padding: 30px 15px;
     color: var(--dark);
@@ -129,6 +153,29 @@ h6,
     transform: rotate(-180deg);
 }
 
+#title1 {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+select {
+    padding: 8px 15px;
+    border: 2px solid var(--secondary);
+    border-radius: 25px;
+    background: #FFFFFF;
+    color: var(--dark);
+    margin-right: 15px;
+}
+
+select:hover {
+    border-color: var(--primary);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
@@ -149,7 +196,6 @@ h6,
         opacity: 0;
         visibility: hidden;
         transition: .5s;
-        
     }
 
     .navbar .nav-item:hover .dropdown-menu {
@@ -159,7 +205,6 @@ h6,
         opacity: 1;
     }
 }
-
 
 /*** Header ***/
 .header-carousel::before,
@@ -248,7 +293,6 @@ h6,
     color: rgba(255, 255, 255, .5);
 }
 
-
 /*** Facility ***/
 .facility-item .facility-icon {
     position: relative;
@@ -334,7 +378,6 @@ h6,
     color: #FFFFFF !important;
 }
 
-
 /*** About ***/
 .about-img img {
     transition: .5s;
@@ -344,16 +387,16 @@ h6,
     background: var(--primary) !important;
 }
 
-
 /*** Classes ***/
 .classes-item {
     transition: .5s;
+    background-color: #F0F8FF;
 }
 
 .classes-item:hover {
     margin-top: -10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
 }
-
 
 /*** Team ***/
 .team-item .team-text {
@@ -375,7 +418,6 @@ h6,
 .team-item:hover .team-text {
     border-color: var(--primary);
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel {
@@ -423,11 +465,14 @@ h6,
 
 .testimonial-carousel .owl-nav .owl-prev:hover,
 .testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--dark);
+    background: var(--accent);
 }
 
-
 /*** Footer ***/
+.footer {
+    background-color: var(--dark);
+}
+
 .footer .btn.btn-social {
     margin-right: 5px;
     width: 45px;
@@ -502,3 +547,20 @@ h6,
     border-right: none;
 }
 
+
+.col-lg-6 .h-100.d-flex {
+    background-color: #deebf7 !important;
+}
+
+
+.bg-light {
+    background-color: #deebf7 !important;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.breadcrumb-item a {
+    color: var(--accent) !important;
+}
