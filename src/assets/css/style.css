@@ -118,7 +118,7 @@ h6,
 
 /*** Navbar ***/
 .navbar {
-    background-color: var(--light);
+    background-color: #d8f1f8 !important;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -216,7 +216,6 @@ select:focus {
     height: 10px;
     top: 0;
     left: 0;
-    background: url(../img/bg-header-top.png) center center repeat-x;
     z-index: 1;
 }
 
