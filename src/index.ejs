@@ -318,40 +318,52 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Make Appointment</h1>
-                                <form>
+                                <form id="contactForm" onsubmit="return false">
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                                <label for="gname">Gurdian Name</label>
+                                                <input type="text" name="name" class="form-control border-0" id="gname" placeholder="Parent/Guardian Name">
+                                                <label for="gname">Parent/Guardian Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Gurdian Email</label>
+                                                <input type="email" name="email" class="form-control border-0" id="gmail" placeholder="Parent/Guardian Email">
+                                                <label for="gmail">Parent/Guardian Email</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
+                                                <input type="text" name="child_name" class="form-control border-0" id="cname" placeholder="Child Name">
                                                 <label for="cname">Child Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
+                                                <input type="text" name="child_age" class="form-control border-0" id="cage" placeholder="Child Age">
                                                 <label for="cage">Child Age</label>
+                                            </div>
+                                        </div>
+                                          <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="text" name="phone_number" class="form-control border-0" id="gmail" placeholder="Parent/Guardian Number">
+                                                <label for="gmail">Parent/Guardian Mobile</label>
+                                            </div>
+                                        </div>
+                                          <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input type="date" name="appointment_expected_date" class="form-control border-0" id="gmail" placeholder="appointment date">
+                                                <label for="gmail">Expected Appointment Date</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                                <textarea name="message" class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
                                                 <label for="message">Message</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" id="submit" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -532,6 +544,34 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+    <script src="assets/js/api.js"></script>
+
+    <script>
+        const BACKEND_URL="<%=BACKEND_URL%>"
+        document.getElementById("submit").addEventListener("click", async function(event) {
+            const contactForm= document.getElementById("contactForm");
+            const formData= new FormData(contactForm);
+            let payload={}
+            for (const [key, value] of formData) {
+                payload[key]=value
+            }
+
+            const saveContactForm=await fetchWithTimeout(`${BACKEND_URL}/contact/update_contact_request_details`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            })
+            const response= await saveContactForm.json()
+            if(!response.success){
+                alert(response.message)
+            }
+            //handle success
+
+           
+        })
+    </script>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

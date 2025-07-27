@@ -61,6 +61,8 @@ app.get("/", async (req, res) => {
   return res.render("index",{carouselData:carouselData || [],eventDetails:eventDetails || [],staffDetails:staffDetails || []});
 });
 
+app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
+
 app.listen(CONFIG.PORT, () => {
   console.log(`Server is running at http://localhost:${CONFIG.PORT}`);
 });
