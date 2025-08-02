@@ -35,6 +35,7 @@ app.get("/", async (req, res) => {
   const carouselData = settingDetails?.setting?.filter((item) => item.type === "home_carousel")
   const eventData = settingDetails?.setting?.filter((item) => item.type === "event_info")
   const staffData = settingDetails?.setting?.filter((item) => item.type === "staff_info")
+  const testimonialData = settingDetails?.setting?.filter((item) => item.type === "testimonial")
   let eventDetails = []
   let staffDetails = []
   if (eventData?.length > 0) {
@@ -67,7 +68,7 @@ app.get("/", async (req, res) => {
     staffDetails = staff?.staffs
   }
 
-  return res.render("index", { carouselData: carouselData || [], eventDetails: eventDetails || [], staffDetails: staffDetails || [], galleryDetails: galleryDetails?.gallery || [] });
+  return res.render("index", { carouselData: carouselData || [], eventDetails: eventDetails || [], staffDetails: staffDetails || [], galleryDetails: galleryDetails?.gallery || [] ,testimonialData: testimonialData || [] });
 });
 
 app.locals.BACKEND_URL = CONFIG?.BACKEND_URL
