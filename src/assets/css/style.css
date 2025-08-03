@@ -8,6 +8,10 @@
     --accent-light: #FFE99A;
     --dark: #103741;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 .back-to-top {
     position: fixed;

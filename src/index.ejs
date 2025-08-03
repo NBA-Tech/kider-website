@@ -33,6 +33,19 @@
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                includedLanguages: 'en,nl,de,fr',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 </head>
 
 <body>
@@ -57,40 +70,35 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
-                    <a href="classes.html" class="nav-item nav-link">Classes</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
-                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                        </div>
-                    </div>
-
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                    <a href="Admin_login.html" class="nav-item nav-link">Admin</a>
+                    <a href="#facilities" class="nav-item nav-link">Installations</a> <!-- Facilities -->
+                    <a href="#about" class="nav-item nav-link">À propos de nous</a> <!-- About Us -->
+                    <a href="#events" class="nav-item nav-link">Événements</a> <!-- Events -->
+                    <a href="#contact" class="nav-item nav-link">Contactez-nous</a> <!-- Contact Us -->
+                    <a href="#teachers" class="nav-item nav-link">Enseignants</a> <!-- Teacher -->
+                    <a href="#gallery" class="nav-item nav-link">Galerie</a> <!-- Gallery -->
+                    <a href="#testimonials" class="nav-item nav-link">Témoignages</a> <!-- Testimonial -->
                 </div>
 
                 <!-- <a style="color: blue;"><h7 id="title1">Select Language</h7></a> -->
                 </br>
-                <select name="" id="">
-                    <option value="en"> English</option>
-                    <option value="nl"> Dutch</option>
-                    <option value="de"> German</option>
-                    <option value="fr"> French</option>
+                <select id="languageSwitcher">
+                    <option value="en">English</option>
+                    <option value="nl">Dutch</option>
+                    <option value="de">German</option>
+                    <option value="fr">French</option>
                 </select>
 
 
-                <a href="" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i
+
+                <a href="#contact" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i
                         class="fa fa-arrow-right ms-3"></i></a>
             </div>
     </div>
     </nav>
+
+    <div id="google_translate_element" style="display: none;"></div>
+
+
 
     <!-- Navbar End -->
 
@@ -112,12 +120,10 @@
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">
                                         <%= item.home_carousel_description %>
                                     </p>
-                                    <a href=""
-                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn
-                                        More</a>
-                                    <a href=""
-                                        class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our
-                                        Classes</a>
+                                    <a href="#facilities"
+                                        class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">nos installations</a>
+                                    <a href="#teachers"
+                                        class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">notre personnel</a>
                                 </div>
                             </div>
                         </div>
@@ -130,16 +136,20 @@
 
 
     <!-- Facilities Start -->
-    <div class="container-xxl py-5">
+    <section id="facilities" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3" id="title">Our School Facilities</h1>
+                <h1 class="mb-3" id="title">Nos Installations Scolaires</h1>
                 <p id="para">
-                    Our school is equipped with state-of-the-art classrooms, a comprehensive library, and modern science
-                    and computer laboratories that support hands-on learning. Students also benefit from expansive
-                    sports facilities, a hygienic cafeteria, and a secure, nurturing environment that promotes academic
-                    excellence and personal growth.
+                    Notre école est équipée de salles de classe ultramodernes, d'une bibliothèque complète, ainsi que de
+                    laboratoires
+                    de sciences et d'informatique modernes favorisant l’apprentissage pratique. Les élèves bénéficient
+                    également
+                    d’installations sportives spacieuses, d’une cafétéria hygiénique et d’un environnement sûr et
+                    bienveillant qui
+                    encourage l’excellence académique et l’épanouissement personnel.
                 </p>
+
 
             </div>
             <div class="row g-4">
@@ -151,10 +161,11 @@
                             <span class="bg-primary"></span>
                         </div>
                         <div class="facility-text bg-primary">
-                            <h3 class="text-primary mb-3">School Bus</h3>
-                            <p class="mb-0">Our reliable and GPS-enabled school buses ensure safe and timely
-                                transportation for all students across designated routes.</p>
+                            <h3 class="text-primary mb-3">Bus Scolaire</h3>
+                            <p class="mb-0">Nos bus scolaires fiables et équipés de GPS assurent un transport sûr et
+                                ponctuel pour tous les élèves sur les itinéraires désignés.</p>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -165,10 +176,11 @@
                             <span class="bg-success"></span>
                         </div>
                         <div class="facility-text bg-success">
-                            <h3 class="text-success mb-3">Playground</h3>
-                            <p class="mb-0">Spacious, well-maintained playgrounds support physical development through
-                                various sports and recreational activities.</p>
+                            <h3 class="text-success mb-3">Terrain de Jeu</h3>
+                            <p class="mb-0">Des terrains de jeu spacieux et bien entretenus favorisent le développement
+                                physique à travers diverses activités sportives et récréatives.</p>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -179,10 +191,11 @@
                             <span class="bg-warning"></span>
                         </div>
                         <div class="facility-text bg-warning">
-                            <h3 class="text-warning mb-3">Healthy Canteen</h3>
-                            <p class="mb-0">Our hygienic canteen offers a variety of nutritious and freshly prepared
-                                meals that support student health and energy.</p>
+                            <h3 class="text-warning mb-3">Cantine Saine</h3>
+                            <p class="mb-0">Notre cantine hygiénique propose une variété de repas nutritifs et
+                                fraîchement préparés qui soutiennent la santé et l’énergie des élèves.</p>
                         </div>
+
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -193,48 +206,43 @@
                             <span class="bg-info"></span>
                         </div>
                         <div class="facility-text bg-info">
-                            <h3 class="text-info mb-3">Positive Learning</h3>
-                            <p class="mb-0">We foster a nurturing learning environment with interactive classrooms and
-                                trained faculty focused on student growth and creativity.</p>
+                            <h3 class="text-info mb-3">Apprentissage Positif</h3>
+                            <p class="mb-0">Nous favorisons un environnement d’apprentissage bienveillant avec des
+                                salles de classe interactives et un corps enseignant formé, axé sur le développement et
+                                la créativité des élèves.</p>
                         </div>
+
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </section>
     <!-- Facilities End -->
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <section id="about" class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="mb-4">Learn More About Our Work and Cultural Activities</h1>
+                    <h1 class="mb-4">En Savoir Plus sur Notre Travail et Nos Activités Culturelles</h1>
                     <p>
-                        Our institution is committed to holistic education that goes beyond academics. We encourage
-                        students to explore their passions, express creativity, and build meaningful connections through
-                        various cultural and extracurricular programs.
+                        Notre établissement est engagé dans une éducation holistique qui va au-delà des matières
+                        académiques.
+                        Nous encourageons les élèves à explorer leurs passions, à exprimer leur créativité et à établir
+                        des liens
+                        significatifs à travers divers programmes culturels et parascolaires.
                     </p>
                     <p class="mb-4">
-                        From art, music, and dance to drama, debates, and community events — we provide a vibrant
-                        platform where students can thrive both intellectually and socially. These experiences help
-                        build confidence, leadership, and a strong sense of identity.
+                        De l’art, de la musique et de la danse au théâtre, aux débats et aux événements communautaires —
+                        nous offrons
+                        une plateforme dynamique où les élèves peuvent s’épanouir intellectuellement et socialement.
+                        Ces expériences favorisent la confiance en soi, le leadership et un fort sentiment d'identité.
                     </p>
-                    <div class="row g-4 align-items-center">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center">
-                                <img class="rounded-circle flex-shrink-0" src="assets/img/user.jpg" alt="Founder photo"
-                                    style="width: 45px; height: 45px;">
-                                <div class="ms-3">
-                                    <h6 class="text-primary mb-1">John Doe</h6>
-                                    <small>CEO & Founder</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
+
 
                 <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row">
@@ -253,7 +261,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- About End -->
 
 
@@ -270,16 +278,19 @@
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <div class="h-100 d-flex flex-column justify-content-center p-5">
-                            <h1 class="mb-4">Become a Teacher</h1>
+                            <h1 class="mb-4">Devenez Enseignant</h1>
                             <p class="mb-4">
-                                Join our passionate team of educators and help shape the future of young minds. We value
-                                dedication, creativity, and a commitment to fostering a positive learning environment
-                                where every student can thrive.
+                                Rejoignez notre équipe passionnée d’éducateurs et contribuez à façonner l’avenir des
+                                jeunes esprits.
+                                Nous valorisons l’engagement, la créativité et le dévouement à créer un environnement
+                                d’apprentissage
+                                positif où chaque élève peut s’épanouir.
                             </p>
-                            <a class="btn btn-primary py-3 px-5" href="#">Contact Us<i
+                            <a class="btn btn-primary py-3 px-5" href="#contact">Contactez-nous<i
                                     class="fa fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
+
 
                 </div>
             </div>
@@ -289,17 +300,20 @@
 
 
     <!-- Classes Start -->
-    <div class="container-xxl py-5">
+    <section id="events" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">School Events</h1>
+                <h1 class="mb-3">Événements Scolaires</h1>
                 <p>
-                    Our school hosts a variety of engaging events throughout the year, including cultural festivals,
-                    academic competitions, sports meets, and community celebrations. These events foster creativity,
-                    teamwork, and a strong sense of school spirit among students.
+                    Notre école organise une variété d’événements captivants tout au long de l’année, notamment des
+                    festivals
+                    culturels, des compétitions académiques, des rencontres sportives et des célébrations
+                    communautaires.
+                    Ces événements favorisent la créativité, l’esprit d’équipe et un fort sentiment d’appartenance chez
+                    les élèves.
                 </p>
-
             </div>
+
             <div class="row g-4">
                 <%eventDetails?.forEach((item)=> { %>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -324,10 +338,10 @@
                                     </div>
 
                                     <%if(item?.event_status){%>
-                                        <span class="bg-success text-white rounded-pill py-2 px-3" href="">Open</span>
+                                        <span class="bg-success text-white rounded-pill py-2 px-3" href="">Ouvrir</span>
                                         <%}else{%>
                                             <span class="bg-danger text-white rounded-pill py-2 px-3"
-                                                href="">Closed</span>
+                                                href="">fermée</span>
                                             <%}%>
 
                                 </div>
@@ -363,59 +377,60 @@
                     <%})%>
             </div>
         </div>
-    </div>
+    </section>
+
     <!-- Classes End -->
 
 
     <!-- Appointment Start -->
-    <div class="container-xxl py-5">
+    <section id="contact" class="container-xxl py-5">
         <div class="container">
             <div class="bg-light rounded">
                 <div class="row g-0">
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                         <div class="h-100 d-flex flex-column justify-content-center p-5">
-                            <h1 class="mb-4">Contact US</h1>
+                            <h1 class="mb-4">Contactez-nous</h1>
                             <form id="contactForm" onsubmit="return false">
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <div class="form-floating">
                                             <input type="text" name="name" class="form-control border-0" id="gname"
-                                                placeholder="Parent/Guardian Name">
-                                            <label for="gname">Parent/Guardian Name</label>
+                                                placeholder="Eg : john">
+                                            <label for="gname">Nom du parent/tuteur</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-floating">
                                             <input type="email" name="email" class="form-control border-0" id="gmail"
-                                                placeholder="Parent/Guardian Email">
-                                            <label for="gmail">Parent/Guardian Email</label>
+                                                placeholder="Eg : qHb5l@example.com">
+                                            <label for="gmail">Courriel du parent/tuteur</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-floating">
                                             <input type="text" name="child_name" class="form-control border-0"
-                                                id="cname" placeholder="Child Name">
-                                            <label for="cname">Child Name</label>
+                                                id="cname" placeholder="Eg : john">
+                                            <label for="cname">Nom de l'enfant</label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-floating">
                                             <input type="text" name="child_age" class="form-control border-0" id="cage"
-                                                placeholder="Child Age">
-                                            <label for="cage">Child Age</label>
+                                                placeholder="Eg 2">
+                                            <label for="cage">Âge de l'enfant</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <textarea name="message" class="form-control border-0"
-                                                placeholder="Leave a message here" id="message"
+                                                placeholder="Laissez un message ici" id="message"
                                                 style="height: 100px"></textarea>
                                             <label for="message">Message</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100 py-3" id="submit"
-                                            type="submit">Submit</button>
+                                            type="submit">Soumettre</button>
                                     </div>
                                 </div>
                             </form>
@@ -430,22 +445,23 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Appointment End -->
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <section id="teachers" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Popular Teachers</h1>
+                <h1 class="mb-3">Enseignants Populaires</h1>
                 <p>
-                    Meet our most respected and inspiring educators who go above and beyond to support student growth.
-                    Their dedication, expertise, and passion for teaching make a lasting impact in the classroom and
-                    beyond.
+                    Découvrez nos enseignants les plus respectés et inspirants, qui se surpassent pour accompagner le
+                    développement des élèves.
+                    Leur dévouement, leur expertise et leur passion pour l’enseignement laissent une empreinte durable
+                    en classe et au-delà.
                 </p>
-
             </div>
+
             <div class="row g-4">
                 <%staffDetails?.forEach((item)=> {%>
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -460,33 +476,27 @@
                                 <p>
                                     <%=item?.staff_experience_info?.qualification%>
                                 </p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href=""><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href=""><i
-                                            class="fab fa-instagram"></i></a>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <%})%>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Team End -->
-    <div class="container-xxl py-5">
+    <section id="gallery" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">Our Gallery</h1>
+                <h1 class="mb-3">Notre Galerie</h1>
                 <p>
-                    Explore moments from our vibrant school life — from academic milestones and cultural celebrations to
-                    sports events and classroom activities. Our gallery captures the spirit, energy, and achievements of
-                    our students and staff.
+                    Découvrez des moments de notre vie scolaire dynamique — des réussites académiques et célébrations
+                    culturelles
+                    aux événements sportifs et activités en classe. Notre galerie reflète l’esprit, l’énergie et les
+                    réussites de
+                    nos élèves et de notre personnel.
                 </p>
-
             </div>
+
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
                 style="max-width: 100vw; margin: 0 auto; border-radius: 10px; overflow: hidden;">
                 <div class="carousel-inner">
@@ -510,22 +520,22 @@
                 </a>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <section id="testimonials" class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="mb-3">What Our Clients Say</h1>
+                <h1 class="mb-3">Ce Que Disent Nos Clients</h1>
                 <p>
-                    Hear from the parents and partners who have experienced the impact of our school firsthand. Their
-                    feedback reflects our dedication to quality education, student growth, and a supportive community
-                    environment.
+                    Écoutez les parents et partenaires qui ont vécu de près l’impact de notre école.
+                    Leurs témoignages reflètent notre engagement envers une éducation de qualité, le développement des
+                    élèves et un environnement communautaire bienveillant.
                 </p>
-
             </div>
+
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <%testimonialData?.forEach((item)=> {%>
 
@@ -540,7 +550,7 @@
                                 <h3 class="mb-1">
                                     <%=item?.testimonial_person_name%>
                                 </h3>
-                                <span>Parent</span>
+                                <span>Parente</span>
                             </div>
                             <i class="fa fa-quote-right fa-3x text-primary ms-auto d-none d-sm-flex"></i>
                         </div>
@@ -549,7 +559,7 @@
 
             </div>
         </div>
-    </div>
+    </section>
     <!-- Testimonial End -->
 
 
@@ -558,7 +568,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="text-white mb-4">Get In Touch</h3>
+                    <h3 class="text-white mb-4">Entrer en contact</h3>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+32 471802424</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>er.syedsaddam@gmail.com</p>
@@ -570,15 +580,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="text-white mb-4">Quick Links</h3>
-                    <a class="btn btn-link text-white-50" href="">About Us</a>
-                    <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                    <a class="btn btn-link text-white-50" href="">Our Services</a>
-                    <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                    <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h3 class="text-white mb-4">Photo Gallery</h3>
+                    <h3 class="text-white mb-4">Galerie de photos</h3>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
                             <img class="img-fluid rounded bg-light p-1" src="assets/img/classes-1.jpg" alt="">
@@ -603,28 +605,6 @@
 
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                        <br>Distributed By: <a class="border-bottom" href="https://themewagon.com"
-                            target="_blank">ThemeWagon</a>
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- Footer End -->
 
@@ -633,6 +613,7 @@
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
     <script src="assets/js/api.js"></script>
+
 
     <script>
         const BACKEND_URL = "<%=BACKEND_URL%>"
