@@ -13,6 +13,7 @@ app.set("views", path.join(__dirname, "src"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/assets", express.static(path.join(__dirname, "src", "assets")));
+app.use('/locales', express.static(path.join(__dirname, "src",'locales')));
 
 app.get("/", async (req, res) => {
   const headers = {
